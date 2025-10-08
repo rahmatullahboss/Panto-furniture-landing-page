@@ -5,7 +5,7 @@ import Flex from '../component/Flex'
 
 const Choose = () => {
   return (
-    <section id='about' className='pt-[120px]'>
+    <section  className='pt-[120px]'>
         <Container>
             <Flex className='justify-between items-center wrap md:flex-row flex-col gap-y-4'>
                 <h1 className='text-4xl text-[#1E1E1E] font-bold font-Pop '>Why <br /> Choosing Us</h1>

@@ -6,7 +6,7 @@ import Flex from '../component/Flex'
 import Button from '../component/Button'
 const Expreance = () => {
   return (
-    <section className='md:pt-[305px] pt-[100px]'>
+    <section id='about' className='md:pt-[305px] pt-[100px]'>
       <Container>
        <Flex className='items-center flex-col md:flex-row justify-between '>
          <div>

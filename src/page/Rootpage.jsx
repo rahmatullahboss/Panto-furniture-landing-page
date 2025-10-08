@@ -8,9 +8,9 @@ const Rootpage = () => {
   return (
     <div>
         <Navber />
-        <main className='min-h-screen'>
+        
          <Outlet/>
-        </main>
+        
         
         <Footer/>
     </div>

@@ -44,10 +44,10 @@ const Navber = () => {
             <div > */}
             <div>
                 <ul className='flex flex-col md:flex-row items-center md:space-x-8 gap-8'>
-                    <NavberList text='Furniture'/>
+                   <a href="#shop"><NavberList text='Furniture'/></a>
                    <a href="#shop"><NavberList text='Shop'/></a>
                  <a href="#about">   <NavberList text='About Us'/></a>
-                    <NavberList text='Contact'/>
+                  <a href="#contact">  <NavberList text='Contact'/></a>
                 </ul>
             </div>
             <div  className='hidden md:block cursor-pointer relative'>
@@ -95,12 +95,13 @@ const Navber = () => {
        < ImCross className='text-white m-3 absolute top-0 right-0'  onClick={hadle}/>
        <div className='top-[50%] left-[50%] absolute -translate-[50%]'>
                 <ul className='flex flex-col md:flex-row items-center md:space-x-8 gap-8'>
-                      <NavberList text='Furniture'/>
+                      
                
-                   
+                    
+                   <a href="#shop"><NavberList text='Furniture'/></a>
                     <a href="#shop"><NavberList text='Shop'/></a>
                        <a href="#about">   <NavberList text='About Us'/></a>
-                    <NavberList text='Contact'/>
+                 <a href="#contact">  <NavberList text='Contact'/></a>
                 </ul>
             </div>
           </div>:null
