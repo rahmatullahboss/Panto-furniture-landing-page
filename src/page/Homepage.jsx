@@ -3,7 +3,7 @@ import Hero from '../component/Hero'
 import Choose from './Choose'
 import Shop from './Shop'
 import Expreance from './Expreance'
-import Matarial from './matarial'
+// import Matarial from './matarial'
 import Tetimonial from './Tetimonial'
 
 const Homepage = () => {
@@ -13,7 +13,7 @@ const Homepage = () => {
       <Choose/>
       <Shop/>
       <Expreance/>
-      <Matarial/>
+      {/* <Matarial/> */}
       <Tetimonial/>
     </div>
   )
