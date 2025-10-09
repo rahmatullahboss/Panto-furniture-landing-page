@@ -17,7 +17,7 @@ let searce=products.filter(item=>(item.name.toLowerCase().includes(e.target.valu
   return (
     <div id='home' className='w-full'>
       {/* Removed Container to allow full width */}
-      <div className='bg-[url(/src/assets/banner.png)] w-full bg-no-repeat bg-cover bg-center h-[800px] shadow-2xl'>
+      <div className='bg-[url(/src/assets/banner.png)] w-full bg-no-repeat bg-cover min-h-screen shadow-2xl'>
 
         <h1 className='text-[#FFFFFF] text-4xl lg:text-6xl font-Pop font-normal md:h-[208px] md:w-[861px] text-center pt-24 mb-8 md:mx-auto leading-130%'>
           Make your interior more minimalistic & modern
