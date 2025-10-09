@@ -1,6 +1,6 @@
 import React, {  useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import NavberList from '../component/Navberlist'
+import NavberList from '../component/NavberList'
 import { FaShoppingBag } from 'react-icons/fa'
 import { FaBars } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
