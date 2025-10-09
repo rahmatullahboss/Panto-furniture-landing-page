@@ -11,3 +11,29 @@
 div {
   color: #000001b3;
 }
+
+/* Add responsive styles for the slick slider */
+.slick-slide {
+  padding: 0 10px;
+}
+
+.slick-list {
+  margin: 0 -10px;
+}
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Additional mobile-friendly styles */
+@media (max-width: 768px) {
+  .slick-slide {
+    padding: 0 5px;
+  }
+  
+  .slick-list {
+    margin: 0 -5px;
+  }
+}

@@ -68,17 +68,17 @@ const Navber = () => {
 
         {/* mobile */}
        
-        <nav className={`md:hidden flex items-center justify-between fixed w-full p-4 
+        <nav className={`md:hidden flex items-center justify-between fixed w-full p-4 z-50
    ${scrolled ? "bg-blue-600 text-black shadow-md" : "bg-transparent"}`}>
               <a href="#home">
-                        <Image src={Panto} />
+                        <Image src={Panto} className="h-8" />
             </a>
            <div>
       
            </div>
           <div >
             {
-              deing? null:<FaBars className='absolute top-0 right-0 m-3 hover:text-amber-500 duration-500' onClick={hadle}/>
+              deing? null:<FaBars className='absolute top-0 right-0 m-3 hover:text-amber-500 duration-500 text-2xl' onClick={hadle}/>
             
             }
             
@@ -89,19 +89,19 @@ const Navber = () => {
   
   {
     deing ?
-          <div className='h-screen   w-full bg-[#000001b3] absolute top-0 left-0'>
+          <div className='h-screen w-full bg-[#000001b3] absolute top-0 left-0 z-50'>
       
 
-       < ImCross className='text-white m-3 absolute top-0 right-0'  onClick={hadle}/>
-       <div className='top-[50%] left-[50%] absolute -translate-[50%]'>
-                <ul className='flex flex-col md:flex-row items-center md:space-x-8 gap-8'>
+       < ImCross className='text-white m-3 absolute top-0 right-0 text-2xl'  onClick={hadle}/>
+       <div className='top-1/2 left-1/2 absolute -translate-x-1/2 -translate-y-1/2'>
+                <ul className='flex flex-col items-center gap-8'>
                       
                
                     
-                   <a href="#shop"><NavberList text='Furniture'/></a>
-                    <a href="#shop"><NavberList text='Shop'/></a>
-                       <a href="#about">   <NavberList text='About Us'/></a>
-                 <a href="#contact">  <NavberList text='Contact'/></a>
+                   <a href="#shop" onClick={hadle}><NavberList text='Furniture'/></a>
+                    <a href="#shop" onClick={hadle}><NavberList text='Shop'/></a>
+                       <a href="#about" onClick={hadle}>   <NavberList text='About Us'/></a>
+                 <a href="#contact" onClick={hadle}>  <NavberList text='Contact'/></a>
                 </ul>
             </div>
           </div>:null

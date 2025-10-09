@@ -6,11 +6,11 @@ const Button = () => {
   return (
     <div>
         <Flex className="items-center gap-1">
-            <button className='text-m text-amber-500 '>
+            <button className='text-sm md:text-m text-amber-500 '>
             More Info
            
         </button>
-         <Image src={Arrow} />
+         <Image className='w-4 h-4 md:w-auto md:h-auto' src={Arrow} />
         </Flex>
     </div>
   )

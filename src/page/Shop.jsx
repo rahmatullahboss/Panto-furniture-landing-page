@@ -27,28 +27,51 @@ const Shop = () => {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ],
        nextArrow:<NextArrow/>,
       prevArrow:<PrevArrow/>
   };
   return (
     <section id='shop'   className='pt-[94px]'>
       <Container>
-        <h1 className='text-center text-4xl text-[#1E1E1E] font-bold font-Pop'>Best Selling Product</h1>
+        <h1 className='text-center text-3xl md:text-4xl text-[#1E1E1E] font-bold font-Pop'>Best Selling Product</h1>
       
-      <div className='bg-[#EEEEEE] md:max-w-md max-w-full mx-auto mt-[108px] rounded-full py-5'>
-       <Flex className="justify-around ">
-         <button className='hover:bg-amber-700 py-2 px-3 rounded-full'>Chair</button>
-        <button className='hover:bg-amber-700 py-2 px-3 rounded-full'>Beds</button>
-        <button className='hover:bg-amber-700 py-2 px-3 rounded-full'>Sofa</button>
-        <button className='hover:bg-amber-700 py-2 px-3 rounded-full'>Lamp</button>
+      <div className='bg-[#EEEEEE] md:max-w-md max-w-full mx-auto mt-12 md:mt-[108px] rounded-full py-3 md:py-5'>
+       <Flex className="justify-around flex-wrap">
+         <button className='hover:bg-amber-700 py-1 px-2 md:py-2 md:px-3 rounded-full text-sm md:text-base'>Chair</button>
+        <button className='hover:bg-amber-700 py-1 px-2 md:py-2 md:px-3 rounded-full text-sm md:text-base'>Beds</button>
+        <button className='hover:bg-amber-700 py-1 px-2 md:py-2 md:px-3 rounded-full text-sm md:text-base'>Sofa</button>
+        <button className='hover:bg-amber-700 py-1 px-2 md:py-2 md:px-3 rounded-full text-sm md:text-base'>Lamp</button>
        </Flex>
       </div>
-      <div className='pt-[86px]'>
+      <div className='pt-8 md:pt-[86px]'>
          
          <Slider  {...settings}>
  {
         products.map((item) => (
-    <div >
+    <div key={item.id} className='px-2'>
       <Cart text={item.name} heading={item.category} price={item.price} reting={item.rating} img={item.imageUrl} />
     </div>
   ))
@@ -56,12 +79,6 @@ const Shop = () => {
 </Slider>
 
    
-    
-        
-       
-       
-      
-     
         
       </div>
       
