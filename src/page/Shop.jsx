@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Container from '../component/Container'
 import Flex from '../component/Flex'
 
@@ -70,7 +71,7 @@ const Shop = () => {
          <button className='hover:bg-amber-700 py-1 px-2 md:py-2 md:px-3 rounded-full text-sm md:text-base'>Chair</button>
         <button className='hover:bg-amber-700 py-1 px-2 md:py-2 md:px-3 rounded-full text-sm md:text-base'>Beds</button>
         <button className='hover:bg-amber-700 py-1 px-2 md:py-2 md:px-3 rounded-full text-sm md:text-base'>Sofa</button>
-        <button className='hover:bg-amber-700 py-1 px-2 md:py-2 md:px-3 rounded-full text-sm md:text-base'>Lamp</button>
+        <Link to="/product"><button className='hover:bg-amber-700 py-1 px-2 md:py-2 md:px-3 rounded-full text-sm md:text-base'>View All Products</button></Link>
        </Flex>
       </div>
       <div className='pt-8 md:pt-[86px] w-full'>

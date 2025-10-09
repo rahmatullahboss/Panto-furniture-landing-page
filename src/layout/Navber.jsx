@@ -28,9 +28,7 @@ const Navber = () => {
    <nav className={`fixed top-0 left-0 w-full py-6 z-50 transition duration-500 hidden md:block
       ${scrolled ? "bg-blue-600 text-black shadow-md" : "bg-transparent text-white"}`}>
       
-      
-      
-        <Container>
+      <Container>
           
           
            <div className='flex justify-between px-6'>
@@ -44,11 +42,11 @@ const Navber = () => {
             <div > */}
             <div>
                 <ul className='flex flex-col md:flex-row items-center md:space-x-8 gap-8'>
-                   <a href="#shop"><NavberList text='Furniture'/></a>
-                   <a href="#shop"><NavberList text='Shop'/></a>
-                 <a href="/product"><NavberList text='Products'/></a>
-                 <a href="#about">   <NavberList text='About Us'/></a>
-                  <a href="#contact">  <NavberList text='Contact'/></a>
+                   <Link to="#shop"><NavberList text='Furniture'/></Link>
+                   <Link to="#shop"><NavberList text='Shop'/></Link>
+                 <Link to="/product"><NavberList text='Products'/></Link>
+                  <Link to="#about">   <NavberList text='About Us'/></Link>
+                  <Link to="#contact">  <NavberList text='Contact'/></Link>
                 </ul>
             </div>
             <div  className='hidden md:block cursor-pointer relative'>
@@ -99,11 +97,11 @@ const Navber = () => {
                       
                
                     
-                   <a href="#shop" onClick={hadle}><NavberList text='Furniture'/></a>
-                    <a href="#shop" onClick={hadle}><NavberList text='Shop'/></a>
-                       <a href="/product" onClick={hadle}><NavberList text='Products'/></a>
-                       <a href="#about" onClick={hadle}>   <NavberList text='About Us'/></a>
-                 <a href="#contact" onClick={hadle}>  <NavberList text='Contact'/></a>
+                   <Link to="#shop" onClick={hadle}><NavberList text='Furniture'/></Link>
+                    <Link to="#shop" onClick={hadle}><NavberList text='Shop'/></Link>
+                       <Link to="/product" onClick={hadle}><NavberList text='Products'/></Link>
+                       <Link to="#about" onClick={hadle}>   <NavberList text='About Us'/></Link>
+                 <Link to="#contact" onClick={hadle}>  <NavberList text='Contact'/></Link>
                 </ul>
             </div>
           </div>:null

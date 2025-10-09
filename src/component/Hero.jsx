@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import Image from './Image'
 // import Bannar from "../assets/banner.png"
 import Container from './Container'
@@ -49,6 +50,11 @@ let searce=products.filter(item=>(item.name.toLowerCase().includes(e.target.valu
             }
           </div>
         }
+        <div className='text-center pt-8'>
+          <Link to="/product" className='inline-block bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-6 rounded-full transition duration-300'>
+            View All Products
+          </Link>
+        </div>
       </div>
     </div>
   )

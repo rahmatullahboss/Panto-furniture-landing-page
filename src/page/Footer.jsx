@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Container from '../component/Container'
 import Flex from '../component/Flex'
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
@@ -31,7 +32,7 @@ const Footer = () => {
           <ul className='flex flex-col gap-y-4 text-sm text-[#1E1E1] font-Pop font-normal '>
             <li className='hover:text-[#F6973F]'>Beds</li>
             <li className='hover:text-[#F6973F]'>Chair</li>
-            <li className='hover:text-[#F6973F]'><a href="/product">All Products</a></li>
+            <li className='hover:text-[#F6973F]'><Link to="/product">All Products</Link></li>
           </ul>
         </div>
         <div className='text-center md:text-left'>
