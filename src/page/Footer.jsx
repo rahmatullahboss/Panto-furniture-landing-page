@@ -31,7 +31,7 @@ const Footer = () => {
           <ul className='flex flex-col gap-y-4 text-sm text-[#1E1E1] font-Pop font-normal '>
             <li className='hover:text-[#F6973F]'>Beds</li>
             <li className='hover:text-[#F6973F]'>Chair</li>
-            <li className='hover:text-[#F6973F]'>All</li>
+            <li className='hover:text-[#F6973F]'><a href="/product">All Products</a></li>
           </ul>
         </div>
         <div className='text-center md:text-left'>

@@ -10,6 +10,7 @@ import Homepage from './page/Homepage';
 import About from './page/About';
 import Contact from './page/Contact';
 import Shop from './page/Shop';
+import Product from './page/Product';
 import Rootpage from './page/Rootpage';
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -43,6 +44,14 @@ const router = createBrowserRouter(
      <Route
       path="/shop"
       element={< Shop/>}
+     
+    >
+   
+    </Route>
+    
+    <Route
+      path="/product"
+      element={< Product/>}
      
     >
    

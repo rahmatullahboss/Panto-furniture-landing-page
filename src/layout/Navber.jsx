@@ -46,6 +46,7 @@ const Navber = () => {
                 <ul className='flex flex-col md:flex-row items-center md:space-x-8 gap-8'>
                    <a href="#shop"><NavberList text='Furniture'/></a>
                    <a href="#shop"><NavberList text='Shop'/></a>
+                 <a href="/product"><NavberList text='Products'/></a>
                  <a href="#about">   <NavberList text='About Us'/></a>
                   <a href="#contact">  <NavberList text='Contact'/></a>
                 </ul>
@@ -100,6 +101,7 @@ const Navber = () => {
                     
                    <a href="#shop" onClick={hadle}><NavberList text='Furniture'/></a>
                     <a href="#shop" onClick={hadle}><NavberList text='Shop'/></a>
+                       <a href="/product" onClick={hadle}><NavberList text='Products'/></a>
                        <a href="#about" onClick={hadle}>   <NavberList text='About Us'/></a>
                  <a href="#contact" onClick={hadle}>  <NavberList text='Contact'/></a>
                 </ul>
