@@ -26,9 +26,9 @@ let searce=products.filter(item=>(item.name.toLowerCase().includes(e.target.valu
         <p className='text-center text-[#FFFFFF] text-2xl font-normal md:w-[606px] w-[306px] mx-auto leading-160% font-Pop'>
           Turn your room with panto into a lot more minimalist and modern with ease and speed
         </p>
-        <div className='text-center pt-[60px] relative'>
-          <input onChange={handleChange} className='w-full md:w-80 px-6 py-2 bg-white/25 rounded-full border-gray-300 py-4' type="text" placeholder='Searce Furniture' />
-          <div className='w-[40px] h-[40px] rounded-full bg-[#E58411] flex justify-center items-center absolute md:top-[70px] top-[70px] md:right-[400px] right-[10px] cursor-pointer'>
+        <div className='text-center pt-[60px] relative mx-auto md:w-80 w-full max-w-md'>
+          <input onChange={handleChange} className='w-full px-6 py-2 bg-white/25 rounded-full border-gray-300 py-4 pl-6 pr-14' type="text" placeholder='Searce Furniture' />
+          <div className='w-[40px] h-[40px] rounded-full bg-[#E58411] flex justify-center items-center absolute top-1/2 transform -translate-y-1/2 right-2 cursor-pointer'>
             <FaSearch className='text-amber-50'/>
           </div>
         </div>
