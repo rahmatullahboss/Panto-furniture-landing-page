@@ -10,8 +10,10 @@ const Cart = ({heading,text,price,reting,img }) => {
   
   return (
     <div className='w-full'>
-      <div className='bg-[#fafafa] w-full h-[350px] md:h-[400px] border border-2 p-4'>
-        <Image className='w-full h-40 md:h-48 object-contain' src={img}/>
+      <div className='bg-[#fafafa] w-full h-[350px] md:h-[400px] border border-2 p-4 flex flex-col'>
+        <div className='flex justify-center items-center h-40 md:h-48'>
+          <Image className='max-h-full max-w-full object-contain' src={img}/>
+        </div>
        <h3 className='text-base mb-1 font-Pop font-semibold '>{heading}</h3>   
    <h4 className='text-lg mb-1 font-Pop font-bold'>{text}</h4>
     <Flex className='justify-between items-center'>

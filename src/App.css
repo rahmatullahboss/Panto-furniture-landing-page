@@ -15,10 +15,18 @@ div {
 /* Add responsive styles for the slick slider */
 .slick-slide {
   padding: 0 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .slick-list {
   margin: 0 -10px;
+}
+
+.slick-slide > div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 /* Ensure images are responsive */
@@ -36,4 +44,15 @@ img {
   .slick-list {
     margin: 0 -5px;
   }
+}
+
+/* Fix for slider on mobile */
+.slick-slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slick-track {
+  display: flex;
+  align-items: stretch;
 }

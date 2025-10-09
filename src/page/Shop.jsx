@@ -43,6 +43,13 @@ const Shop = () => {
         }
       },
       {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
@@ -50,8 +57,8 @@ const Shop = () => {
         }
       }
     ],
-       nextArrow:<NextArrow/>,
-      prevArrow:<PrevArrow/>
+    nextArrow:<NextArrow/>,
+    prevArrow:<PrevArrow/>
   };
   return (
     <section id='shop'   className='pt-[94px]'>
@@ -66,9 +73,9 @@ const Shop = () => {
         <button className='hover:bg-amber-700 py-1 px-2 md:py-2 md:px-3 rounded-full text-sm md:text-base'>Lamp</button>
        </Flex>
       </div>
-      <div className='pt-8 md:pt-[86px]'>
+      <div className='pt-8 md:pt-[86px] w-full'>
          
-         <Slider  {...settings}>
+         <Slider  {...settings} className="w-full">
  {
         products.map((item) => (
     <div key={item.id} className='px-2'>
