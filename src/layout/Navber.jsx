@@ -1,5 +1,5 @@
 import React, {  useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import NavberList from '../component/NavberList'
 import { FaShoppingBag } from 'react-icons/fa'
 import { FaBars } from "react-icons/fa";
@@ -11,6 +11,8 @@ const Navber = () => {
   let [deing,setDeing]=useState(false)
   
    const [scrolled, setScrolled] = useState(false);
+   const location = useLocation();
+   
   let hadle=()=>(
     setDeing(!deing)
   )
@@ -23,6 +25,22 @@ const Navber = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   
+  // Function to handle navigation to homepage sections
+  const navigateToSection = (sectionId) => {
+    if (location.pathname !== '/') {
+      // If not on homepage, navigate to homepage with hash
+      window.location.href = `/#${sectionId}`;
+    } else {
+      // If on homepage, scroll to section
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+    // Close mobile menu
+    setDeing(false);
+  };
+  
   return (
     <section>
    <nav className={`fixed top-0 left-0 w-full py-6 z-50 transition duration-500 hidden md:block
@@ -33,20 +51,17 @@ const Navber = () => {
           
            <div className='flex justify-between px-6'>
                
-            <a href="#home">
-                        <Image src={Panto} />
-            </a>
+            <Link to="/">
+              <Image src={Panto} />
+            </Link>
 
-          {/* <Link to='/'><Image src={Panto} /></Link>
-          
-            <div > */}
             <div>
                 <ul className='flex flex-col md:flex-row items-center md:space-x-8 gap-8'>
-                   <Link to="#shop"><NavberList text='Furniture'/></Link>
-                   <Link to="#shop"><NavberList text='Shop'/></Link>
-                 <Link to="/product"><NavberList text='Products'/></Link>
-                  <Link to="#about">   <NavberList text='About Us'/></Link>
-                  <Link to="#contact">  <NavberList text='Contact'/></Link>
+                   <button onClick={() => navigateToSection('shop')} className="cursor-pointer"><NavberList text='Furniture'/></button>
+                   <button onClick={() => navigateToSection('shop')} className="cursor-pointer"><NavberList text='Shop'/></button>
+                   <Link to="/product"><NavberList text='Products'/></Link>
+                  <button onClick={() => navigateToSection('about')} className="cursor-pointer"><NavberList text='About Us'/></button>
+                  <button onClick={() => navigateToSection('contact')} className="cursor-pointer"><NavberList text='Contact'/></button>
                 </ul>
             </div>
             <div  className='hidden md:block cursor-pointer relative'>
@@ -69,9 +84,9 @@ const Navber = () => {
        
         <nav className={`md:hidden flex items-center justify-between fixed w-full p-4 z-50
    ${scrolled ? "bg-blue-600 text-black shadow-md" : "bg-transparent"}`}>
-              <a href="#home">
-                        <Image src={Panto} className="h-8" />
-            </a>
+              <Link to="/">
+                <Image src={Panto} className="h-8" />
+              </Link>
            <div>
       
            </div>
@@ -97,11 +112,11 @@ const Navber = () => {
                       
                
                     
-                   <Link to="#shop" onClick={hadle}><NavberList text='Furniture'/></Link>
-                    <Link to="#shop" onClick={hadle}><NavberList text='Shop'/></Link>
-                       <Link to="/product" onClick={hadle}><NavberList text='Products'/></Link>
-                       <Link to="#about" onClick={hadle}>   <NavberList text='About Us'/></Link>
-                 <Link to="#contact" onClick={hadle}>  <NavberList text='Contact'/></Link>
+                   <button onClick={() => navigateToSection('shop')} className="cursor-pointer"><NavberList text='Furniture'/></button>
+                    <button onClick={() => navigateToSection('shop')} className="cursor-pointer"><NavberList text='Shop'/></button>
+                       <Link to="/product" onClick={() => setDeing(false)}><NavberList text='Products'/></Link>
+                       <button onClick={() => navigateToSection('about')} className="cursor-pointer"><NavberList text='About Us'/></button>
+                 <button onClick={() => navigateToSection('contact')} className="cursor-pointer"><NavberList text='Contact'/></button>
                 </ul>
             </div>
           </div>:null

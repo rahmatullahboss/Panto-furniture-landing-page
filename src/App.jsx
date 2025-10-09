@@ -21,7 +21,7 @@ const router = createBrowserRouter(
      
     >
      <Route
-      path="/"
+      index
       element={< Homepage/>}
      
     >
