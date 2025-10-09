@@ -1,4 +1,13 @@
-div{
-    position:absolute;
-    color: #000001b3;
+/* Updated styles for full width hero section */
+#home {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+div {
+  color: #000001b3;
 }
