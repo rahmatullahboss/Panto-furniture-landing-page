@@ -41,10 +41,20 @@ const Navber = () => {
     setDeing(false);
   };
   
+  // Determine text color based on page and scroll state
+  const getTextColor = () => {
+    // For product page, always use black text for better visibility
+    if (location.pathname === '/product') {
+      return 'text-black';
+    }
+    // For other pages, use white when not scrolled, black when scrolled
+    return scrolled ? "text-black" : "text-white";
+  };
+  
   return (
     <section>
    <nav className={`fixed top-0 left-0 w-full py-6 z-50 transition duration-500 hidden md:block
-      ${scrolled ? "bg-blue-600 text-black shadow-md" : "bg-transparent text-white"}`}>
+      ${scrolled ? "bg-blue-600 shadow-md" : "bg-transparent"}`}>
       
       <Container>
           
@@ -56,7 +66,7 @@ const Navber = () => {
             </Link>
 
             <div>
-                <ul className='flex flex-col md:flex-row items-center md:space-x-8 gap-8'>
+                <ul className={`flex flex-col md:flex-row items-center md:space-x-8 gap-8 ${getTextColor()}`}>
                    <button onClick={() => navigateToSection('shop')} className="cursor-pointer"><NavberList text='Furniture'/></button>
                    <button onClick={() => navigateToSection('shop')} className="cursor-pointer"><NavberList text='Shop'/></button>
                    <Link to="/product"><NavberList text='Products'/></Link>
@@ -64,9 +74,9 @@ const Navber = () => {
                   <button onClick={() => navigateToSection('contact')} className="cursor-pointer"><NavberList text='Contact'/></button>
                 </ul>
             </div>
-            <div  className='hidden md:block cursor-pointer relative'>
-             <FaShoppingBag className='text-lg text-white'/>
-               <span className='absolute text-amber-50 bg-amber-500 top-0 -right-3  h-5 w-5 rounded-full flex justify-center items-center'>
+            <div  className={`hidden md:block cursor-pointer relative ${getTextColor()}`}>
+             <FaShoppingBag className='text-lg'/>
+               <span className='absolute text-amber-50 bg-amber-500 top-0 -right-3  h-5 w-5 rounded-full flex justify-center items-center text-xs'>
                 0
               </span>  
               </div>
@@ -92,7 +102,7 @@ const Navber = () => {
            </div>
           <div >
             {
-              deing? null:<FaBars className='absolute top-0 right-0 m-3 hover:text-amber-500 duration-500 text-2xl' onClick={hadle}/>
+              deing? null:<FaBars className={`absolute top-0 right-0 m-3 hover:text-amber-500 duration-500 text-2xl ${getTextColor().includes('white') ? 'text-white' : 'text-black'}`} onClick={hadle}/>
             
             }
             
@@ -108,7 +118,7 @@ const Navber = () => {
 
        < ImCross className='text-white m-3 absolute top-0 right-0 text-2xl'  onClick={hadle}/>
        <div className='top-1/2 left-1/2 absolute -translate-x-1/2 -translate-y-1/2'>
-                <ul className='flex flex-col items-center gap-8'>
+                <ul className='flex flex-col items-center gap-8 text-white'>
                       
                
                     
