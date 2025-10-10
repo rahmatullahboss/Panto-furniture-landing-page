@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import Container from '../component/Container';
 import Flex from '../component/Flex';
 import products from '../products';
@@ -21,6 +21,7 @@ const SingleProduct = () => {
           <div className='text-center py-12'>
             <h2 className='text-2xl text-gray-600'>Product not found</h2>
             <p className='text-gray-500 mt-2'>The product you're looking for doesn't exist or has been removed.</p>
+            <Link to="/product" className='mt-4 inline-block text-blue-600 hover:underline'>Back to Products</Link>
           </div>
         </Container>
       </section>
@@ -54,6 +55,9 @@ const SingleProduct = () => {
   return (
     <section className='pt-[94px] min-h-screen bg-gray-50'>
       <Container>
+        {/* Header similar to Product page */}
+        <h1 className='text-center text-3xl md:text-4xl text-[#1E1E1E] font-bold font-Pop pb-8 pt-6'>Product Details</h1>
+        
         <div className='py-12'>
           <Flex className='flex-col md:flex-row gap-8 md:gap-12'>
             {/* Product Image */}

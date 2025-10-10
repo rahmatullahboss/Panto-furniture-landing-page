@@ -80,7 +80,7 @@ const Shop = () => {
  {
         products.map((item) => (
     <div key={item.id} className='px-2'>
-      <Cart text={item.name} heading={item.category} price={item.price} reting={item.rating} img={item.imageUrl} />
+      <Cart text={item.name} heading={item.category} price={item.price} reting={item.rating} img={item.imageUrl} productId={item.id} />
     </div>
   ))
     }
