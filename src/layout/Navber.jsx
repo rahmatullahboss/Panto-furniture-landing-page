@@ -43,78 +43,100 @@ const Navber = () => {
   
   // Determine text color based on scroll state
   const getTextColor = () => {
-    if(location.pathname === "/product"){
-      return "text-black"
+    if (location.pathname === "/product") {
+      return "text-black";
     }
     // When scrolled, use white text
     // When not scrolled, use black text
     return scrolled ? "text-white" : "text-black";
   };
-  
+
   // Determine background class based on scroll state
   const getBackgroundClass = () => {
-    if(location.pathname === "/product"){
-      return scrolled ? "bg-white" : "bg-transparent"
+    if (location.pathname === "/product") {
+      return scrolled ? "bg-white" : "bg-transparent";
     }
     // When scrolled, use blue background
     // When not scrolled, use transparent background
     return scrolled ? "bg-blue-600" : "bg-transparent";
   };
-  
+
   return (
     <section>
-   <nav className={`fixed top-0 left-0 w-full py-6 z-50 transition duration-500 hidden md:block
-      ${getBackgroundClass()} ${scrolled ? "shadow-md" : ""}`}>
-      
-      <Container>
-          
-          
-           <div className='flex justify-between px-6'>
-               
+      <nav
+        className={`fixed top-0 left-0 w-full py-6 z-50 transition duration-500 hidden md:block
+      ${getBackgroundClass()} ${scrolled ? "shadow-md" : ""}`}
+      >
+        <Container>
+          <div className="flex justify-between px-6">
             <Link to="/">
-              <Image src={Panto} />
+              <Image src={Panto} className={location.pathname === '/product' ? 'logo-black' : ''}/>
             </Link>
 
             <div>
-                <ul className={`flex flex-col md:flex-row items-center md:space-x-8 gap-8 ${getTextColor()}`}>
-                   <button onClick={() => navigateToSection('shop')} className="cursor-pointer"><NavberList text='Furniture'/></button>
-                   <button onClick={() => navigateToSection('shop')} className="cursor-pointer"><NavberList text='Shop'/></button>
-                   <Link to="/product"><NavberList text='Products'/></Link>
-                  <button onClick={() => navigateToSection('about')} className="cursor-pointer"><NavberList text='About Us'/></button>
-                  <button onClick={() => navigateToSection('contact')} className="cursor-pointer"><NavberList text='Contact'/></button>
-                </ul>
+              <ul
+                className={`flex flex-col md:flex-row items-center md:space-x-8 gap-8 ${getTextColor()}`}
+              >
+                <button
+                  onClick={() => navigateToSection("shop")}
+                  className="cursor-pointer"
+                >
+                  <NavberList text="Furniture" />
+                </button>
+                <button
+                  onClick={() => navigateToSection("shop")}
+                  className="cursor-pointer"
+                >
+                  <NavberList text="Shop" />
+                </button>
+                <Link to="/product">
+                  <NavberList text="Products" />
+                </Link>
+                <button
+                  onClick={() => navigateToSection("about")}
+                  className="cursor-pointer"
+                >
+                  <NavberList text="About Us" />
+                </button>
+                <button
+                  onClick={() => navigateToSection("contact")}
+                  className="cursor-pointer"
+                >
+                  <NavberList text="Contact" />
+                </button>
+              </ul>
             </div>
-            <div  className={`hidden md:block cursor-pointer relative ${getTextColor()}`}>
-             <FaShoppingBag className='text-lg'/>
-               <span className='absolute text-amber-50 bg-amber-500 top-0 -right-3  h-5 w-5 rounded-full flex justify-center items-center text-xs'>
+            <div
+              className={`hidden md:block cursor-pointer relative ${getTextColor()}`}
+            >
+              <FaShoppingBag className="text-lg" />
+              <span className="absolute text-amber-50 bg-amber-500 top-0 -right-3  h-5 w-5 rounded-full flex justify-center items-center text-xs">
                 0
-              </span>  
-              </div>
-            
-         </div> 
-     
-        
-        
-          
+              </span>
+            </div>
+          </div>
         </Container>
-</nav>
+      </nav>
 
+      {/* mobile */}
 
-        {/* mobile */}
-       
-        <nav className={`md:hidden flex items-center justify-between fixed w-full p-4 z-50
-   ${scrolled ? "bg-blue-600" : "bg-transparent"} ${getTextColor()}`}>
-              <Link to="/">
-                <Image src={Panto} className="h-8" />
-              </Link>
-           <div>
-      
-           </div>
-          <div >
-            {
-              deing? null:<FaBars className={`absolute top-0 right-0 m-3 hover:text-amber-500 duration-500 text-2xl ${getTextColor().includes('white') ? 'text-white' : 'text-black'}`} onClick={hadle}/>
-            
-            }
+      <nav
+        className={`md:hidden flex items-center justify-between fixed w-full p-4 z-50
+   ${getBackgroundClass()} ${getTextColor()}`}
+      >
+        <Link to="/">
+          <Image src={Panto} className={`h-8 ${location.pathname === '/product' ? 'logo-black' : ''}`} />
+        </Link>
+        <div></div>
+        <div>
+          {deing ? null : (
+            <FaBars
+              className={`absolute top-0 right-0 m-3 hover:text-amber-500 duration-500 text-2xl ${
+                getTextColor().includes("white") ? "text-white" : "text-black"
+              }`}
+              onClick={hadle}
+            />
+          )}
             
       
      
