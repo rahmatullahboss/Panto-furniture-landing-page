@@ -84,13 +84,13 @@ const SingleProduct = () => {
   const screenWidth = useScreenWidth();
 
   const getSlidesToShow = () => {
-    if (screenWidth < 640) {
+    if (screenWidth < 768) {
       return 2;
     }
     if (screenWidth < 1024) {
-      return 2;
+      return 3;
     }
-    return 3;
+    return 4;
   };
 
   const settings = {
