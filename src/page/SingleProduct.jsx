@@ -8,6 +8,7 @@ import { FaPlus, FaMinus, FaShoppingBag, FaArrowLeft, FaArrowRight } from 'react
 import Image from '../component/Image';
 import Cart from '../component/Cart';
 import Slider from 'react-slick';
+import useScreenWidth from '../component/useScreenWidth';
 
 const SingleProduct = () => {
   const { productId } = useParams();
@@ -80,28 +81,26 @@ const SingleProduct = () => {
     );
   };
 
+  const screenWidth = useScreenWidth();
+
+  const getSlidesToShow = () => {
+    if (screenWidth < 640) {
+      return 2;
+    }
+    if (screenWidth < 1024) {
+      return 2;
+    }
+    return 3;
+  };
+
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: getSlidesToShow(),
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-    ],
   };
   
   return (
