@@ -43,6 +43,9 @@ const Navber = () => {
   
   // Determine text color based on scroll state
   const getTextColor = () => {
+    if(location.pathname === "/product"){
+      return "text-black"
+    }
     // When scrolled, use white text
     // When not scrolled, use black text
     return scrolled ? "text-white" : "text-black";
@@ -50,6 +53,9 @@ const Navber = () => {
   
   // Determine background class based on scroll state
   const getBackgroundClass = () => {
+    if(location.pathname === "/product"){
+      return scrolled ? "bg-white" : "bg-transparent"
+    }
     // When scrolled, use blue background
     // When not scrolled, use transparent background
     return scrolled ? "bg-blue-600" : "bg-transparent";
