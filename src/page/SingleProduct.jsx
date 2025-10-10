@@ -4,9 +4,10 @@ import Container from '../component/Container';
 import Flex from '../component/Flex';
 import products from '../products';
 import { IoIosStar } from 'react-icons/io';
-import { FaPlus, FaMinus, FaShoppingBag } from 'react-icons/fa';
+import { FaPlus, FaMinus, FaShoppingBag, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import Image from '../component/Image';
 import Cart from '../component/Cart';
+import Slider from 'react-slick';
 
 const SingleProduct = () => {
   const { productId } = useParams();
@@ -51,6 +52,56 @@ const SingleProduct = () => {
     if (quantity + value > 0) {
       setQuantity(quantity + value);
     }
+  };
+
+  const NextArrow = (props) => {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={`${className} absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-200 hover:bg-gray-300 rounded-full p-2 cursor-pointer z-10`}
+        style={{ ...style, display: 'block' }}
+        onClick={onClick}
+      >
+        <FaArrowRight />
+      </div>
+    );
+  };
+
+  const PrevArrow = (props) => {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={`${className} absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-200 hover:bg-gray-300 rounded-full p-2 cursor-pointer z-10`}
+        style={{ ...style, display: 'block' }}
+        onClick={onClick}
+      >
+        <FaArrowLeft />
+      </div>
+    );
+  };
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
   
   return (
@@ -144,11 +195,11 @@ const SingleProduct = () => {
           {/* Related Products */}
           <div className='mt-16'>
             <h2 className='text-2xl md:text-3xl font-bold text-[#1E1E1E] mb-8 text-center'>Related Products</h2>
-            <Flex className='flex-wrap justify-center gap-6 md:gap-8'>
+            <Slider {...settings}>
               {products
                 .filter(item => item.category === product.category && item.id !== product.id)
                 .map(item => (
-                  <div key={item.id} className='w-full sm:w-[280px] md:w-[300px]'>
+                  <div key={item.id} className='px-4'>
                     <Cart
                       text={item.name}
                       heading={item.category}
@@ -159,7 +210,7 @@ const SingleProduct = () => {
                     />
                   </div>
                 ))}
-            </Flex>
+            </Slider>
           </div>
         </div>
       </Container>
