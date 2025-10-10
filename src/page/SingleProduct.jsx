@@ -6,6 +6,7 @@ import products from '../products';
 import { IoIosStar } from 'react-icons/io';
 import { FaPlus, FaMinus, FaShoppingBag } from 'react-icons/fa';
 import Image from '../component/Image';
+import Cart from '../component/Cart';
 
 const SingleProduct = () => {
   const { productId } = useParams();
@@ -56,7 +57,7 @@ const SingleProduct = () => {
     <section className='pt-[94px] min-h-screen bg-gray-50'>
       <Container>
         {/* Header similar to Product page */}
-        <h1 className='text-center text-3xl md:text-4xl text-[#1E1E1E] font-bold font-Pop pb-8 pt-6'>Product Details</h1>
+        <h1 className='text-center text-3xl md:text-4xl text-[#1E1E1E] font-bold font-Pop pb-8 pt-6'>Our Products</h1>
         
         <div className='py-12'>
           <Flex className='flex-col md:flex-row gap-8 md:gap-12'>
@@ -143,9 +144,22 @@ const SingleProduct = () => {
           {/* Related Products */}
           <div className='mt-16'>
             <h2 className='text-2xl md:text-3xl font-bold text-[#1E1E1E] mb-8 text-center'>Related Products</h2>
-            <div className='text-center py-8 text-gray-500'>
-              <p>Related products will be displayed here</p>
-            </div>
+            <Flex className='flex-wrap justify-center gap-6 md:gap-8'>
+              {products
+                .filter(item => item.category === product.category && item.id !== product.id)
+                .map(item => (
+                  <div key={item.id} className='w-full sm:w-[280px] md:w-[300px]'>
+                    <Cart
+                      text={item.name}
+                      heading={item.category}
+                      price={item.price}
+                      reting={item.rating}
+                      img={item.imageUrl}
+                      productId={item.id}
+                    />
+                  </div>
+                ))}
+            </Flex>
           </div>
         </div>
       </Container>
