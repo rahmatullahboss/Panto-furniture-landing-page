@@ -43,30 +43,35 @@ const Navber = () => {
   
   // Determine text color based on scroll state
   const getTextColor = () => {
-    // When scrolled, use white text
-    // When not scrolled, use black text
+    if (location.pathname === '/') {
+      return scrolled ? "text-black" : "text-white";
+    }
+    if (location.pathname === '/product') {
+      return "text-black";
+    }
     return scrolled ? "text-white" : "text-black";
   };
-  
+
   // Determine background class based on scroll state
   const getBackgroundClass = () => {
-    // When scrolled, use blue background
-    // When not scrolled, use transparent background
+    if (location.pathname === '/' || location.pathname === '/product') {
+        return scrolled ? "bg-white" : "bg-transparent";
+    }
     return scrolled ? "bg-blue-600" : "bg-transparent";
   };
-  
+
   return (
     <section>
    <nav className={`fixed top-0 left-0 w-full py-6 z-50 transition duration-500 hidden md:block
       ${getBackgroundClass()} ${scrolled ? "shadow-md" : ""}`}>
-      
+
       <Container>
-          
-          
+
+
            <div className='flex justify-between px-6'>
-               
+
             <Link to="/">
-              <Image src={Panto} />
+              <Image src={Panto} className={(location.pathname === '/product' || (location.pathname === '/' && scrolled)) ? 'logo-black' : ''}/>
             </Link>
 
             <div>
@@ -82,32 +87,32 @@ const Navber = () => {
              <FaShoppingBag className='text-lg'/>
                <span className='absolute text-amber-50 bg-amber-500 top-0 -right-3  h-5 w-5 rounded-full flex justify-center items-center text-xs'>
                 0
-              </span>  
+              </span>
               </div>
-            
-         </div> 
-     
-        
-        
-          
+
+         </div>
+
+
+
+
         </Container>
 </nav>
 
 
         {/* mobile */}
-       
+
         <nav className={`md:hidden flex items-center justify-between fixed w-full p-4 z-50
-   ${scrolled ? "bg-blue-600" : "bg-transparent"} ${getTextColor()}`}>
+   ${getBackgroundClass()} ${getTextColor()}`}>
               <Link to="/">
-                <Image src={Panto} className="h-8" />
+                <Image src={Panto} className={`h-8 ${(location.pathname === '/product' || (location.pathname === '/' && scrolled)) ? 'logo-black' : ''}`} />
               </Link>
            <div>
-      
+
            </div>
           <div >
             {
               deing? null:<FaBars className={`absolute top-0 right-0 m-3 hover:text-amber-500 duration-500 text-2xl ${getTextColor().includes('white') ? 'text-white' : 'text-black'}`} onClick={hadle}/>
-            
+
             }
             
       
