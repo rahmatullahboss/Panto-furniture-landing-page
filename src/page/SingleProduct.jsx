@@ -137,7 +137,7 @@ const SingleProduct = () => {
                 <p className='text-2xl md:text-3xl font-bold text-[#1E1E1E] mb-6'>${product.price}</p>
                 
                 <p className='text-gray-600 mb-8'>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                  {product.description}
                 </p>
                 
                 <div className='mb-8'>
