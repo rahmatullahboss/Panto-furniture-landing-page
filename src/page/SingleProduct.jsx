@@ -62,7 +62,7 @@ const SingleProduct = () => {
           <Flex className='flex-col md:flex-row gap-8 md:gap-12'>
             {/* Product Image */}
             <div className='w-full md:w-1/2'>
-              <div className='bg-[#fafafa] border border-gray-200 rounded-lg p-8 h-[500px] flex items-center justify-center'>
+              <div className='bg-[#fafafa] border border-gray-200 rounded-lg p-8 h-[400px] md:h-[500px] flex items-center justify-center'>
                 <Image 
                   className='max-h-full max-w-full object-contain' 
                   src={product.imageUrl}
@@ -86,7 +86,7 @@ const SingleProduct = () => {
                 <p className='text-2xl md:text-3xl font-bold text-[#1E1E1E] mb-6'>${product.price}</p>
                 
                 <p className='text-gray-600 mb-8'>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                  {product.description}
                 </p>
                 
                 <div className='mb-8'>

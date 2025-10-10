@@ -29,6 +29,7 @@
     price: 99,
     imageUrl: Chair1,
     rating: 5,
+    description: "A very comfortable chair for your living room.",
   },
   {
     id: 2,
@@ -37,6 +38,7 @@
     price: 129,
     imageUrl: Chair2,
     rating: 4,
+    description: "An ergonomic chair designed for long hours of work.",
   },
   {
     id: 3,
@@ -45,6 +47,7 @@
     price: 149,
     imageUrl: Chair3,
     rating: 3,
+    description: "A stylish armchair that will enhance your home decor.",
   },
   {
     id: 4,
@@ -53,6 +56,7 @@
     price: 199,
     imageUrl: Chair4,
     rating: 4,
+    description: "A luxurious leather recliner for ultimate comfort.",
   },
   {
     id: 5,
@@ -61,6 +65,7 @@
     price: 89,
     imageUrl:  Chair5,
     rating: 4.5,
+    description: "A minimalist chair with a modern and sleek design.",
   },
 
   // Beds
@@ -71,6 +76,7 @@
     price: 299,
     imageUrl: Bed1,
     rating: 5,
+    description: "A spacious king-size bed for a restful night's sleep.",
   },
   {
     id: 7,
@@ -79,6 +85,7 @@
     price: 249,
     imageUrl: Bed2,
     rating: 5,
+    description: "A comfortable queen-size bed that fits any bedroom.",
   },
   {
     id: 8,
@@ -87,6 +94,7 @@
     price: 399,
     imageUrl: Bed3,
     rating: 3,
+    description: "A modern bed frame with a minimalist design.",
   },
   {
     id: 9,
@@ -95,6 +103,7 @@
     price: 349,
     imageUrl: Bed4,
     rating: 2,
+    description: "A sturdy platform bed that requires no box spring.",
   },
   {
     id: 10,
@@ -103,6 +112,7 @@
     price: 459,
     imageUrl: Bed5,
     rating: 5,
+    description: "An elegant sleigh bed with a classic and timeless design.",
   },
 
   // Sofas
@@ -113,6 +123,7 @@
     price: 499,
     imageUrl: Sofa1,
     rating: 4,
+    description: "A luxurious sofa that provides both comfort and style.",
   },
   {
     id: 12,
@@ -121,6 +132,7 @@
     price: 399,
     imageUrl: Sofa2,
     rating: 5,
+    description: "A compact sofa perfect for small living spaces.",
   },
   {
     id: 13,
@@ -129,6 +141,7 @@
     price: 699,
     imageUrl: Sofa3,
     rating: 4,
+    description: "An L-shaped sofa that offers plenty of seating space.",
   },
   {
     id: 14,
@@ -137,6 +150,7 @@
     price: 549,
     imageUrl: Sofa4,
     rating: 5,
+    description: "A comfortable sofa with a chaise lounge for relaxation.",
   },
   {
     id: 15,
@@ -145,6 +159,7 @@
     price: 799,
     imageUrl: Sofa5,
     rating: 3.6,
+    description: "A versatile sectional sofa that can be configured to fit your space.",
   },
 
   // Lamps
@@ -155,6 +170,7 @@
     price: 49,
     imageUrl: Lamp1,
     rating: 5,
+    description: "A modern lamp that provides bright and efficient lighting.",
   },
   {
     id: 17,
@@ -163,6 +179,7 @@
     price: 59,
     imageUrl: Lamp2,
     rating: 4,
+    description: "A classic lamp with a timeless and elegant design.",
   },
   {
     id: 18,
@@ -171,6 +188,7 @@
     price: 69,
     imageUrl: Lamp3,
     rating: 3,
+    description: "A wooden table lamp that adds a warm and cozy touch.",
   },
   {
     id: 19,
@@ -179,6 +197,7 @@
     price: 89,
     imageUrl: Lamp4,
     rating: 5,
+    description: "An industrial floor lamp with a unique and stylish design.",
   },
   {
     id: 20,
@@ -187,6 +206,7 @@
     price: 79,
     imageUrl: Lamp6,
     rating: 4,
+    description: "A vintage desk lamp that brings a touch of nostalgia.",
   },
 ];
 export default products
