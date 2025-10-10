@@ -51,10 +51,20 @@ const Navber = () => {
     return scrolled ? "text-black" : "text-white";
   };
   
+  // Determine background class based on page and scroll state
+  const getBackgroundClass = () => {
+    // For product page, always use white background for better visibility
+    if (location.pathname === '/product') {
+      return "bg-white";
+    }
+    // For other pages, use transparent when not scrolled, blue when scrolled
+    return scrolled ? "bg-blue-600" : "bg-transparent";
+  };
+  
   return (
     <section>
    <nav className={`fixed top-0 left-0 w-full py-6 z-50 transition duration-500 hidden md:block
-      ${scrolled ? "bg-blue-600 shadow-md" : "bg-transparent"}`}>
+      ${getBackgroundClass()} ${scrolled ? "shadow-md" : ""}`}>
       
       <Container>
           
@@ -93,7 +103,7 @@ const Navber = () => {
         {/* mobile */}
        
         <nav className={`md:hidden flex items-center justify-between fixed w-full p-4 z-50
-   ${scrolled ? "bg-blue-600 text-black shadow-md" : "bg-transparent"}`}>
+   ${scrolled ? "bg-blue-600 text-black shadow-md" : "bg-white text-black"}`}>
               <Link to="/">
                 <Image src={Panto} className="h-8" />
               </Link>
@@ -102,7 +112,7 @@ const Navber = () => {
            </div>
           <div >
             {
-              deing? null:<FaBars className={`absolute top-0 right-0 m-3 hover:text-amber-500 duration-500 text-2xl ${getTextColor().includes('white') ? 'text-white' : 'text-black'}`} onClick={hadle}/>
+              deing? null:<FaBars className='absolute top-0 right-0 m-3 hover:text-amber-500 duration-500 text-2xl text-black' onClick={hadle}/>
             
             }
             
