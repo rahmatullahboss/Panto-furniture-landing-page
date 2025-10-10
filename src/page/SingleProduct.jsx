@@ -4,8 +4,11 @@ import Container from '../component/Container';
 import Flex from '../component/Flex';
 import products from '../products';
 import { IoIosStar } from 'react-icons/io';
-import { FaPlus, FaMinus, FaShoppingBag } from 'react-icons/fa';
+import { FaPlus, FaMinus, FaShoppingBag, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import Image from '../component/Image';
+import Cart from '../component/Cart';
+import Slider from 'react-slick';
+import useScreenWidth from '../component/useScreenWidth';
 
 const SingleProduct = () => {
   const { productId } = useParams();
@@ -51,12 +54,60 @@ const SingleProduct = () => {
       setQuantity(quantity + value);
     }
   };
+
+  const NextArrow = (props) => {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={`${className} absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-200 hover:bg-gray-300 rounded-full p-2 cursor-pointer z-10`}
+        style={{ ...style, display: 'block' }}
+        onClick={onClick}
+      >
+        <FaArrowRight />
+      </div>
+    );
+  };
+
+  const PrevArrow = (props) => {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={`${className} absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-200 hover:bg-gray-300 rounded-full p-2 cursor-pointer z-10`}
+        style={{ ...style, display: 'block' }}
+        onClick={onClick}
+      >
+        <FaArrowLeft />
+      </div>
+    );
+  };
+
+  const screenWidth = useScreenWidth();
+
+  const getSlidesToShow = () => {
+    if (screenWidth < 768) {
+      return 2;
+    }
+    if (screenWidth < 1024) {
+      return 3;
+    }
+    return 4;
+  };
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: getSlidesToShow(),
+    slidesToScroll: 1,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+  };
   
   return (
     <section className='pt-[94px] min-h-screen bg-gray-50'>
       <Container>
         {/* Header similar to Product page */}
-        <h1 className='text-center text-3xl md:text-4xl text-[#1E1E1E] font-bold font-Pop pb-8 pt-6'>Product Details</h1>
+        <h1 className='text-center text-3xl md:text-4xl text-[#1E1E1E] font-bold font-Pop pb-8 pt-6'>Our Products</h1>
         
         <div className='py-12'>
           <Flex className='flex-col md:flex-row gap-8 md:gap-12'>
@@ -143,9 +194,22 @@ const SingleProduct = () => {
           {/* Related Products */}
           <div className='mt-16'>
             <h2 className='text-2xl md:text-3xl font-bold text-[#1E1E1E] mb-8 text-center'>Related Products</h2>
-            <div className='text-center py-8 text-gray-500'>
-              <p>Related products will be displayed here</p>
-            </div>
+            <Slider {...settings}>
+              {products
+                .filter(item => item.category === product.category && item.id !== product.id)
+                .map(item => (
+                  <div key={item.id} className='px-4'>
+                    <Cart
+                      text={item.name}
+                      heading={item.category}
+                      price={item.price}
+                      reting={item.rating}
+                      img={item.imageUrl}
+                      productId={item.id}
+                    />
+                  </div>
+                ))}
+            </Slider>
           </div>
         </div>
       </Container>
