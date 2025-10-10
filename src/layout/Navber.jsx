@@ -44,7 +44,7 @@ const Navber = () => {
   // Determine text color based on scroll state
   const getTextColor = () => {
     if (location.pathname.startsWith('/product/')) {
-      return scrolled ? "text-black" : "text-white";
+      return "text-black";
     }
     if (location.pathname === '/') {
       return scrolled ? "text-black" : "text-white";
@@ -58,7 +58,7 @@ const Navber = () => {
   // Determine background class based on scroll state
   const getBackgroundClass = () => {
     if (location.pathname.startsWith('/product/')) {
-      return scrolled ? "bg-white" : "bg-transparent";
+      return "bg-white";
     }
     if (location.pathname === '/' || location.pathname === '/product') {
         return scrolled ? "bg-white" : "bg-transparent";
@@ -77,7 +77,7 @@ const Navber = () => {
            <div className='flex justify-between px-6'>
 
             <Link to="/">
-              <Image src={Panto} className={(location.pathname === '/product' || (location.pathname.startsWith('/product/') && scrolled) || (location.pathname === '/' && scrolled)) ? 'logo-black' : ''}/>
+              <Image src={Panto} className={(location.pathname === '/product' || location.pathname.startsWith('/product/') || (location.pathname === '/' && scrolled)) ? 'logo-black' : ''}/>
             </Link>
 
             <div>
@@ -110,7 +110,7 @@ const Navber = () => {
         <nav className={`md:hidden flex items-center justify-between fixed w-full p-4 z-50
    ${getBackgroundClass()} ${getTextColor()}`}>
               <Link to="/">
-                <Image src={Panto} className={`h-8 ${(location.pathname === '/product' || (location.pathname.startsWith('/product/') && scrolled) || (location.pathname === '/' && scrolled)) ? 'logo-black' : ''}`} />
+                <Image src={Panto} className={`h-8 ${(location.pathname === '/product' || location.pathname.startsWith('/product/') || (location.pathname === '/' && scrolled)) ? 'logo-black' : ''}`} />
               </Link>
            <div>
 
