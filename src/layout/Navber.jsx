@@ -41,23 +41,17 @@ const Navber = () => {
     setDeing(false);
   };
   
-  // Determine text color based on page and scroll state
+  // Determine text color based on scroll state
   const getTextColor = () => {
-    // For product page, always use black text for better visibility
-    if (location.pathname === '/product') {
-      return 'text-black';
-    }
-    // For other pages, use white when not scrolled, black when scrolled
-    return scrolled ? "text-black" : "text-white";
+    // When scrolled, use white text
+    // When not scrolled, use black text
+    return scrolled ? "text-white" : "text-black";
   };
   
-  // Determine background class based on page and scroll state
+  // Determine background class based on scroll state
   const getBackgroundClass = () => {
-    // For product page, always use blue background
-    if (location.pathname === '/product') {
-      return "bg-blue-600";
-    }
-    // For other pages, use transparent when not scrolled, blue when scrolled
+    // When scrolled, use blue background
+    // When not scrolled, use transparent background
     return scrolled ? "bg-blue-600" : "bg-transparent";
   };
   
@@ -102,7 +96,8 @@ const Navber = () => {
 
         {/* mobile */}
        
-        <nav className={`md:hidden flex items-center justify-between fixed w-full p-4 z-50 bg-blue-600 text-black`}>
+        <nav className={`md:hidden flex items-center justify-between fixed w-full p-4 z-50
+   ${scrolled ? "bg-blue-600" : "bg-transparent"} ${getTextColor()}`}>
               <Link to="/">
                 <Image src={Panto} className="h-8" />
               </Link>
@@ -111,7 +106,7 @@ const Navber = () => {
            </div>
           <div >
             {
-              deing? null:<FaBars className='absolute top-0 right-0 m-3 hover:text-amber-500 duration-500 text-2xl text-black' onClick={hadle}/>
+              deing? null:<FaBars className={`absolute top-0 right-0 m-3 hover:text-amber-500 duration-500 text-2xl ${getTextColor().includes('white') ? 'text-white' : 'text-black'}`} onClick={hadle}/>
             
             }
             
@@ -125,7 +120,7 @@ const Navber = () => {
           <div className='h-screen w-full bg-[#000001b3] absolute top-0 left-0 z-50'>
       
 
-       < ImCross className='text-white m-3 absolute top-0 right-0 text-2xl'  onClick={hadle}/>
+       < ImCross className={`text-white m-3 absolute top-0 right-0 text-2xl`}  onClick={hadle}/>
        <div className='top-1/2 left-1/2 absolute -translate-x-1/2 -translate-y-1/2'>
                 <ul className='flex flex-col items-center gap-8 text-white'>
                       
