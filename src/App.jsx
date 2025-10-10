@@ -11,6 +11,7 @@ import About from './page/About';
 import Contact from './page/Contact';
 import Shop from './page/Shop';
 import Product from './page/Product';
+import SingleProduct from './page/SingleProduct';
 import Rootpage from './page/Rootpage';
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -52,6 +53,14 @@ const router = createBrowserRouter(
     <Route
       path="/product"
       element={< Product/>}
+     
+    >
+   
+    </Route>
+    
+    <Route
+      path="/product/:productId"
+      element={< SingleProduct/>}
      
     >
    

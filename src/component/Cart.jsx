@@ -3,10 +3,12 @@ import Flex from './Flex'
 import { IoIosStar } from 'react-icons/io'
 import { FaPlus } from 'react-icons/fa'
 import Image from './Image'
+import { useNavigate } from 'react-router-dom'
 
 
 
-const Cart = ({heading,text,price,reting,img }) => {
+const Cart = ({heading,text,price,reting,img, productId }) => {
+  const navigate = useNavigate();
   
   // Render stars based on rating
   const renderStars = () => {
@@ -26,9 +28,16 @@ const Cart = ({heading,text,price,reting,img }) => {
     return stars;
   };
   
+  const handleProductClick = () => {
+    navigate(`/product/${productId}`);
+  };
+  
   return (
     <div className='w-full'>
-      <div className='bg-[#fafafa] w-full h-[350px] md:h-[400px] border border-gray-200 rounded-lg p-5 flex flex-col transition-all duration-300 hover:shadow-lg'>
+      <div 
+        className='bg-[#fafafa] w-full h-[350px] md:h-[400px] border border-gray-200 rounded-lg p-5 flex flex-col transition-all duration-300 hover:shadow-lg cursor-pointer'
+        onClick={handleProductClick}
+      >
         <div className='flex justify-center items-center h-40 md:h-48 mb-4'>
           <Image className='max-h-full max-w-full object-contain' src={img}/>
         </div>

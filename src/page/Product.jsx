@@ -51,6 +51,7 @@ const Product = () => {
                     price={item.price} 
                     reting={item.rating} 
                     img={item.imageUrl} 
+                    productId={item.id}
                   />
                 </div>
               ))}
