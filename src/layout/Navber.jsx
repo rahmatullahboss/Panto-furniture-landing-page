@@ -53,9 +53,9 @@ const Navber = () => {
   
   // Determine background class based on page and scroll state
   const getBackgroundClass = () => {
-    // For product page, always use white background for better visibility
+    // For product page, always use blue background
     if (location.pathname === '/product') {
-      return "bg-white";
+      return "bg-blue-600";
     }
     // For other pages, use transparent when not scrolled, blue when scrolled
     return scrolled ? "bg-blue-600" : "bg-transparent";
@@ -102,8 +102,7 @@ const Navber = () => {
 
         {/* mobile */}
        
-        <nav className={`md:hidden flex items-center justify-between fixed w-full p-4 z-50
-   ${scrolled ? "bg-blue-600 text-black shadow-md" : "bg-white text-black"}`}>
+        <nav className={`md:hidden flex items-center justify-between fixed w-full p-4 z-50 bg-blue-600 text-black`}>
               <Link to="/">
                 <Image src={Panto} className="h-8" />
               </Link>
